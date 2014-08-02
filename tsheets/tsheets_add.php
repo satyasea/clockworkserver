@@ -1,5 +1,5 @@
 
-<b> tSheets API Test: Add timesheet</b><p>
+<b> tSheets API Test: Clock In</b><p>
 <?php
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
 //echo "accesstoken [" .$access_token ."]<br>";
@@ -14,7 +14,7 @@ $request[] = array(
     'jobcode_id' => '25100809',
     'type' => 'regular',
     'start' => '2014-08-02T00:22:00-07:00',
-      'end' => '2014-08-02T00:35:00-07:00'
+      'end' => ''
 );
 
 $result = $tsheets->add(ObjectType::Timesheets, $request);

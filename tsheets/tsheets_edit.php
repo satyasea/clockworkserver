@@ -1,5 +1,5 @@
 
-<b> tSheets API Test: Add timesheet</b><p>
+<b> tSheets API Test: Clock Out</b><p>
 <?php
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
 //echo "accesstoken [" .$access_token ."]<br>";

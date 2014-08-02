@@ -33,7 +33,7 @@ $headr = array();
 $headr[] = 'Content-length: 0';
 //$headr[] = 'Content-type: application/json';
 $headr[] = "Authorization: Bearer ".$access_token;
-     $ch = curl_init("https://rest.tsheets.com/api/v1/timesheets?start_date=2014-07-31&end_date=2014-08-01&on_the_clock=both");
+     $ch = curl_init("https://rest.tsheets.com/api/v1/timesheets?start_date=2014-08-01&end_date=2014-08-02&on_the_clock=both");
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER,$headr);

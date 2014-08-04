@@ -3,7 +3,16 @@
 <?php
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
 
-$jsonData = '{"data":[{"created": "2014-08-02T15:37:15-07:00","user_id": 1635347,"accuracy": 20,"altitude": 0,"latitude": 37.794446,"longitude": -122.27831}]}';
+
+//http://ineeduneed.com/clockwork/tsheets/tsheets_geo_add.php?worker_id=1635347&lat=37.794446&lon=-122.27831
+$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
+$lat_input = isset($_GET['lat']) ? $_GET['lat'] : '52.366667';
+$lon_input = isset($_GET['lon']) ? $_GET['lon'] : '4.900000';
+
+
+$current_time = $current_time = date("c");
+
+$jsonData = '{"data":[{"created": "'.$current_time.'","user_id": '.$id_input.',"accuracy": 20,"altitude": 0,"latitude": '.$lat_input.',"longitude": '.$lon_input.'}]}';
 
 echo "json raw: " . $jsonData ."<br>";
 echo "<br><br>";

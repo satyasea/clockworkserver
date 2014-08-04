@@ -1,7 +1,7 @@
 <?php
 
 //2014-08-02T15:37:15-07:00
-$current_time = $current_time = date("c");
+$current_time = date("c");
 echo "time " . $current_time;
 
 ?>

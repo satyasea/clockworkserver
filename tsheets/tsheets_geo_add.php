@@ -10,7 +10,7 @@ $lat_input = isset($_GET['lat']) ? $_GET['lat'] : '52.366667';
 $lon_input = isset($_GET['lon']) ? $_GET['lon'] : '4.900000';
 
 
-$current_time = $current_time = date("c");
+$current_time = date("c");
 
 $jsonData = '{"data":[{"created": "'.$current_time.'","user_id": '.$id_input.',"accuracy": 20,"altitude": 0,"latitude": '.$lat_input.',"longitude": '.$lon_input.'}]}';
 

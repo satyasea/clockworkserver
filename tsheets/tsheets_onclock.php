@@ -1,7 +1,10 @@
 <?php
 //url example ---- http://ineeduneed.com/clockwork/tsheets/tsheets_onclock.php?worker_id=1636899
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
+
+//$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
 $id_input = isset($_POST['worker_id']) ? $_POST['worker_id'] :  '0';
+
 $start_date = "2014-01-01";
 $end_date = new DateTime('tomorrow');
 $end_date = $end_date->format('Y-m-d');

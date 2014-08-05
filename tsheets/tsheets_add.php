@@ -10,7 +10,9 @@ $access_token = 'f609738cade64e72030b27269224c6b72f486218';
 //echo "accesstoken [" .$access_token ."]<br>";
 include_once "tsheets.inc.php";
 $tsheets = new TSheetsRestClient(1, $access_token);
-$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
+
+//$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
+$id_input = isset($_POST['worker_id']) ? $_POST['worker_id'] :  '0';
 //$start_input = isset($_GET['start']) ? $_GET['start'] : '2014-01-01T11:11:11-07:00';
 
 $job_code = '25100809';

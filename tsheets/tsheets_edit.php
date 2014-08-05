@@ -9,8 +9,8 @@ $debug=false;
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
 date_default_timezone_set("America/Los_Angeles");
 $clock_out_date= date("c");
-echo"<br>clockoutdate ". $clock_out_date. "<br>";
-echo"<br>timezone ". date_default_timezone_get(). "<br>";
+//echo"<br>clockoutdate ". $clock_out_date. "<br>";
+//echo"<br>timezone ". date_default_timezone_get(). "<br>";
 //echo "accesstoken [" .$access_token ."]<br>";
 include_once "tsheets.inc.php";
 if($debug){
@@ -55,5 +55,5 @@ $request = array();
 $request[] = array('id' => $sheet_id, 'end' => $clock_out_date);
 $result = $tsheets->edit(ObjectType::Timesheets, $request);
 //print "Edit timesheet returned:\n";
-print_r($result);
+echo (json_encode($result));
 ?>

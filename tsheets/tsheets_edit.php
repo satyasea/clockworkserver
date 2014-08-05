@@ -5,19 +5,22 @@
  *  arbitrarily looks at timesheets from the beginning of 2014 until tomorrow
  * test url http://ineeduneed.com/clockwork/tsheets/tsheets_edit.php?worker_id=1636899
  */
-
+$debug=false;
 $access_token = 'f609738cade64e72030b27269224c6b72f486218';
+date_default_timezone_set("America/Los_Angeles");
+$clock_out_date= date("c");
+echo"<br>clockoutdate ". $clock_out_date. "<br>";
+echo"<br>timezone ". date_default_timezone_get(). "<br>";
 //echo "accesstoken [" .$access_token ."]<br>";
 include_once "tsheets.inc.php";
-
-
-//$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
-$id_input = isset($_POST['worker_id']) ? $_POST['worker_id'] :  '0';
-
+if($debug){
+	$id_input = isset($_GET['worker_id']) ? $_GET['worker_id'] :  '0';
+}else{
+	$id_input = isset($_POST['worker_id']) ? $_POST['worker_id'] :  '0';	
+}
 $start_date = "2014-01-01";
 $end_date = new DateTime('tomorrow');
 $end_date = $end_date->format('Y-m-d');
-
 //curl -H "Authorization: Bearer <Access-Token>" -i "https://rest.tsheets.com/api/v1/timesheets?start_date=2014-08-01&end_date=2014-08-04&on_the_clock=yes";
 $headr = array();
 $headr[] = 'Content-length: 0';
@@ -49,9 +52,8 @@ while (list ($key, $val) = each ($timesheetsArr) ) {
 // Edit a timesheet
  $tsheets = new TSheetsRestClient(1, $access_token);
 $request = array();
-$request[] = array('id' => $sheet_id, 'end' => date("c"));
+$request[] = array('id' => $sheet_id, 'end' => $clock_out_date);
 $result = $tsheets->edit(ObjectType::Timesheets, $request);
-print "Edit timesheet returned:\n";
+//print "Edit timesheet returned:\n";
 print_r($result);
-
 ?>

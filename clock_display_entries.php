@@ -1,11 +1,12 @@
-
+<?php
+if($_GET['worker_id']==null){
+	header('Location: http://failblog.cheezburger.com/');
+}
+?>
 <html>
-
 <center><table border="0" cellspacing="0" cellpadding="0"><tr><td align="center"><script type="text/javascript" src="http://www.worldtimeserver.com/clocks/embed.js"></script><script type="text/javascript" language="JavaScript">objUSCA=new Object;objUSCA.wtsclock="wtsclock001.swf";objUSCA.color="FF9900";objUSCA.wtsid="US-CA";objUSCA.width=200;objUSCA.height=200;objUSCA.wmode="transparent";showClock(objUSCA);</script></td></tr><tr><td align="center"><h2>Los Angeles</h2></td></tr></table>
 </head><br><B><font size=5>ClockWork Crowd Cloud<br>Employee Time Log Monitor</font></b><br><br>
 <?php
-
-
 	$host = "http://ineeduneed.com/ineed/";
 //	echo "testing mysql connection....<br>";
 	//	$server = "50.87.144.113";

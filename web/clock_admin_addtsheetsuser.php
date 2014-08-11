@@ -68,6 +68,7 @@ mysql_query("INSERT INTO user (worker_id, tsheets_id, role, worker_fname, worker
 $id_new = mysql_insert_id();
  $result = mysql_query("select role, worker_fname, worker_lname, tsheets_id, worker_id from user where id=$id_new;") or die("DB Error. No such new User");
 $row = mysql_fetch_assoc($result);
+mysql_close($con);
 //echo $row['role']. " ". $row['worker_fname'] . " ".$row['worker_lname'] . " " . $row['tsheets_id'];	
 	header('Location: http://ineeduneed.com/clockwork/web/clock_admin_adduserconfirm.php?admin='.$row['role'].'&first_name='.$row['worker_fname'].'&last_name='.$row['worker_lname'].'&tsheets_id='.$row['tsheets_id'].'&worker_id='.$row['worker_id']);
 ?>

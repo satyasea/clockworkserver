@@ -38,6 +38,7 @@ echo $data;
 */
 $result = mysql_query("SELECT worker_id, tsheets_id, role, worker_fname, worker_lname, phone_num from user where role='admin' AND phone_num='$phone' and password='$pass';") or die("No Match for Query.");
 $row = mysql_fetch_array($result);
+mysql_close($con);
 if($row != null){
 	$worker_id = $row[0];
 	$role = $row[2];
@@ -48,5 +49,4 @@ if($row != null){
 }else{
 	header('Location: http://failblog.cheezburger.com/');
 }
-mysql_close($con);
 ?>
